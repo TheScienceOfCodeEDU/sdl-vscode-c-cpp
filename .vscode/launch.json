@@ -2,12 +2,24 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debug linux",
       "type": "gdb",
       "request": "launch",
-      "name": "Debug linux",
       "target": "${workspaceRoot}/build/linux/main",
       "cwd": "${workspaceRoot}",
       "valuesFormatting": "parseText"
+    },
+    {
+      "name": "Debug mac",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceRoot}/build/mac/main",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb"
     },
     {
       "name": "Debug windows",

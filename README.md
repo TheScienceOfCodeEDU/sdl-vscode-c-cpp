@@ -14,14 +14,14 @@
   sudo apt install libsdl2-dev
   ```
 
-### VSCodium
-* Install VSCodium.
-* Install these extensions:
-    * [Native Debug](https://open-vsx.org/extension/webfreak/debug)
-    * [C/C++ extension pack](https://open-vsx.org/extension/franneck94/vscode-c-cpp-dev-extension-pack)
+## Mac
 
-Open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window and you may add debug breakpoints as required.
+Install pre-requisites by using these commands:
 
+```
+xcode-select --install
+brew install SDL2
+```
 
 ## Windows
 
@@ -63,6 +63,17 @@ gdb --version
 ```
 
 If something fails, double check your PATH values against real folder locations.
+
+
+## IDE
+
+### VSCodium
+* Install VSCodium.
+* Install these extensions:
+    * [Native Debug](https://open-vsx.org/extension/webfreak/debug)
+    * [C/C++ extension pack](https://open-vsx.org/extension/franneck94/vscode-c-cpp-dev-extension-pack)
+
+Open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window and you may add debug breakpoints as required.
 
 ### VSCode
 * Install VSCode.
