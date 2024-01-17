@@ -24,7 +24,7 @@ Open the project and press **ctrl + shift + b** to build. Then press **F5** to D
 Open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window and you may add debug breakpoints as required.
 
 
-## Configure the environment
+## Configuring the environment
 
 ### Linux
 
@@ -48,6 +48,8 @@ Install pre-requisites by using these commands:
 xcode-select --install
 brew install SDL2
 ```
+
+By default, we enabled LLDB as debugger otherwise you will need to [certify the **GDB** binary](https://stackoverflow.com/questions/66470788/how-to-set-gdb-as-debugger-for-the-c-c-extension-pf-vscode-on-macos).
 
 ### Windows
 
