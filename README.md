@@ -2,24 +2,15 @@
 
 ## Quickstart
 
-Configure the environment for your OS (see instructions below), and then use the instructions for your IDE:
+Configure the environment for your OS (see instructions below), and then prepare your IDE:
 
-### VSCodium
-
-* Install VSCodium.
-* Install these extensions:
+* For **VSCodium** install these extensions:
     * [Native Debug](https://open-vsx.org/extension/webfreak/debug)
     * [C/C++ extension pack](https://open-vsx.org/extension/franneck94/vscode-c-cpp-dev-extension-pack)
 
-Open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window and you may add debug breakpoints as required.
-
-### VSCode
-
-* Install VSCode.
-* Install these extensions:
+* For **VSCode** install these extensions:
     * [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
     * [C/C++ extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
-
 
 Open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window and you may add debug breakpoints as required.
 
