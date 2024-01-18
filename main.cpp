@@ -1,4 +1,8 @@
+#ifdef __MINGW32__
+#include <SDL.h>
+#else
 #include <SDL2/SDL.h>
+#endif
 #include <stdio.h>
 
 // Screen dimension constants
