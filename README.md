@@ -1,5 +1,10 @@
 # SDL base project
 
+This project is part of a tutorial by The Science of Code.
+
+* [Complete instructions English](https://thescienceofcode.com/sdl-vscode-c-cpp-debug/)
+* [Complete instructions Spanish](https://thescienceofcode.com/es/sdl-vscode-c-cpp-debug/)
+
 ## Quickstart
 
 Configure the environment for your OS (see instructions below), and then prepare your IDE:
