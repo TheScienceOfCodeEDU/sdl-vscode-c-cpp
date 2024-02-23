@@ -11,16 +11,19 @@
 
 
 function inline bool
-sdl_utils_Init(const char *Title, SDL_Window **Window, SDL_Renderer **Renderer)
+sdl_utils_Init(const char *Title, SDL_Window **Window, SDL_Renderer **Renderer, bool TextureFiltering)
 {
     if (SDL_Init(SDL_INIT_VIDEO ) < 0)
     {
         printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
         return 0;
     }
-    if (!SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1"))
+    if (TextureFiltering)
     {
-        printf("Warning: Linear texture filtering not enabled!");
+        if (!SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1"))
+        {
+            printf("Warning: Linear texture filtering not enabled!");
+        }
     }
 
     *Window = SDL_CreateWindow(Title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
@@ -37,7 +40,7 @@ sdl_utils_Init(const char *Title, SDL_Window **Window, SDL_Renderer **Renderer)
         printf("Renderer could not be created! SDL_Error: %s\n", SDL_GetError());
         return 0;
     }
-    SDL_SetRenderDrawColor(*Renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+    SDL_SetRenderDrawColor(*Renderer, BG_R, BG_G, BG_B, 0xFF);
     
     int imgFlags = IMG_INIT_PNG | IMG_INIT_JPG;
     if (!(IMG_Init(imgFlags) & imgFlags))

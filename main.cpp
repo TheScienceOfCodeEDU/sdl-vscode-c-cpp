@@ -1,3 +1,4 @@
+#include <SDL2/SDL_rect.h>
 #define UNITY_BUILD 1
 #ifdef __MINGW32__
  #include <SDL.h>
@@ -14,14 +15,19 @@ main(int argc, char *args[])
 {
     SDL_Window *Window;
     SDL_Renderer *Renderer;
-    if (sdl_utils_Init("SDL Tutorial", &Window, &Renderer)) 
+    // Init SDL without texture filtering for better pixelart results
+    if (sdl_utils_Init("SDL Tutorial", &Window, &Renderer, 0)) 
     {
-        SDL_Texture* Texture = sdl_loadTexture("res/huxley-tech.jpg", Renderer);
+        SDL_Texture* Texture = sdl_loadTexture("res/characters.png", Renderer);
         
+        // Sprite source rectangle
+        SDL_Rect SrcRect = {10, 42, 14, 21};
+        // Target rectangle (note that we will paint it at x4 its original size)
+        SDL_Rect DestRect = {0, 0, SrcRect.w * 4, SrcRect.h * 4};
         while (1)
         {
             SDL_RenderClear(Renderer);
-            SDL_RenderCopy(Renderer, Texture, 0, 0);
+            SDL_RenderCopy(Renderer, Texture, &SrcRect, &DestRect);
             SDL_RenderPresent(Renderer);
 
             SDL_Event Event;
