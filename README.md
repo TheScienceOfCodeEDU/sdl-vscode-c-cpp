@@ -12,6 +12,7 @@ Configure the environment for your OS (see instructions below), and then prepare
 * For **VSCodium** install these extensions:
     * [Native Debug](https://open-vsx.org/extension/webfreak/debug)
     * [C/C++ extension pack](https://open-vsx.org/extension/franneck94/vscode-c-cpp-dev-extension-pack)
+    * [clangd](https://open-vsx.org/extension/llvm-vs-code-extensions/vscode-clangd)
 
 * For **VSCode** install these extensions:
     * [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
@@ -27,13 +28,13 @@ Open the project and press **ctrl + shift + b** to build. Then press **F5** to D
 * Fedora:
   ```
   sudo dnf install gcc-c++
-  sudo dnf install SDL2 SDL2-devel
+  sudo dnf install SDL2 SDL2-devel SDL2_image-devel
   ```
 
 * Ubuntu:
   ```
   sudo apt install build-essential
-  sudo apt install libsdl2-dev
+  sudo apt install libsdl2-dev libsdl2-image-dev
   ```
 
 ### Mac
@@ -43,6 +44,7 @@ Install pre-requisites by using these commands:
 ```
 xcode-select --install
 brew install SDL2
+brew install sdl2_image
 ```
 
 By default, we enabled LLDB as debugger otherwise you will need to [certify the **GDB** binary](https://stackoverflow.com/questions/66470788/how-to-set-gdb-as-debugger-for-the-c-c-extension-pf-vscode-on-macos).

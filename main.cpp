@@ -1,57 +1,38 @@
+#define UNITY_BUILD 1
 #ifdef __MINGW32__
-#include <SDL.h>
+ #include <SDL.h>
+ #include <SDL_image.h>
 #else
-#include <SDL2/SDL.h>
+ #include <SDL2/SDL.h>
+ #include <SDL2/SDL_image.h>
 #endif
-#include <stdio.h>
+#include "common.h"
+#include "sdl_utils.h"
 
-// Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
-
-int main(int argc, char* args[])
+int
+main(int argc, char *args[])
 {
-	// Initialize SDL
-	if (SDL_Init(SDL_INIT_VIDEO ) < 0)
-	{
-		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
-	}
-	else
-	{
-		// Create window
-		SDL_Window* window = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-		if (window == NULL)
-		{
-			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
-		}
-		else
-		{
-			// The surface contained by the window
-			SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
-			SDL_Event windowEvent;
-			SDL_Rect rect = {0, 0, 50, 50};
-			while (true) 
-			{
-				rect.x = (rect.x + 1) % SCREEN_WIDTH;
-				rect.y = (rect.y + 1) % SCREEN_HEIGHT;
+    SDL_Window *Window;
+    SDL_Renderer *Renderer;
+    if (sdl_utils_Init("SDL Tutorial", &Window, &Renderer)) 
+    {
+        SDL_Texture* Texture = sdl_loadTexture("res/huxley-tech.jpg", Renderer);
+        
+        while (1)
+        {
+            SDL_RenderClear(Renderer);
+            SDL_RenderCopy(Renderer, Texture, 0, 0);
+            SDL_RenderPresent(Renderer);
 
-				SDL_FillRect(screenSurface, NULL, SDL_MapRGB( screenSurface->format, 255, 255, 255));
-				SDL_FillRect(screenSurface, &rect, SDL_MapRGB( screenSurface->format, 0, 0, 255));
-				SDL_UpdateWindowSurface(window);
+            SDL_Event Event;
+            if (SDL_PollEvent(&Event))
+            {
+                if (Event.type == SDL_QUIT ) break;
+            } 
+        }
 
-				if (SDL_PollEvent(&windowEvent))
-				{
-					 if (windowEvent.type == SDL_QUIT )
-					 	break;
-				} 
-			}	
-		}
-		// Destroy window
-		SDL_DestroyWindow(window);
-	}
-
-	//Quit SDL subsystems
-	SDL_Quit();
-
-	return 0;
+        SDL_DestroyTexture(Texture);		
+    }
+    sdl_utils_Quit(Window, Renderer);
+    return 0;
 }
