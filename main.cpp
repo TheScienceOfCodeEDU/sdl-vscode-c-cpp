@@ -1,4 +1,3 @@
-#include <SDL2/SDL_rect.h>
 #define UNITY_BUILD 1
 #ifdef __MINGW32__
  #include <SDL.h>
@@ -33,7 +32,7 @@ main(int argc, char *args[])
             SDL_Event Event;
             if (SDL_PollEvent(&Event))
             {
-                if (Event.type == SDL_QUIT ) break;
+                if (Event.type == SDL_QUIT) break;
             } 
         }
 
