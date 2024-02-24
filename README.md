@@ -5,6 +5,8 @@ This project is part of a tutorial by The Science of Code.
 * [Complete instructions English](https://thescienceofcode.com/sdl-vscode-c-cpp-debug/)
 * [Complete instructions Spanish](https://thescienceofcode.com/es/sdl-vscode-c-cpp-debug/)
 
+Sprites used are licensed under CC0 (Public Domain) by [Buch](https://opengameart.org/content/a-platformer-in-the-forest).
+
 ## Quickstart
 
 Configure the environment for your OS (see instructions below), and then prepare your IDE:
