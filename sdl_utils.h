@@ -64,7 +64,7 @@ sdl_utils_Quit(SDL_Window *Window, SDL_Renderer *Renderer)
 
 
 function SDL_Texture *
-sdl_loadTexture(const char *Path,  SDL_Renderer *Renderer)
+sdl_utils_loadTexture(const char *Path,  SDL_Renderer *Renderer)
 {
     SDL_Surface *LoadedSurface = IMG_Load(Path);
     if (LoadedSurface == 0)

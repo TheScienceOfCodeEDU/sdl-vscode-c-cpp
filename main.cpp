@@ -18,7 +18,7 @@ main(int argc, char *args[])
     // Init SDL without texture filtering for better pixelart results
     if (sdl_utils_Init("SDL Tutorial", &Window, &Renderer, 0)) 
     {
-        SDL_Texture* Texture = sdl_loadTexture("res/characters.png", Renderer);
+        SDL_Texture* Texture = sdl_utils_loadTexture("res/characters.png", Renderer);
         
         // Sprite source rectangle
         SDL_Rect SrcRect = {9, 42, 15, 21};
