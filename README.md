@@ -67,7 +67,13 @@ Install [MSYS2](https://www.msys2.org/) under the default folder **c:\\msys64\\*
 
 Go to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**.
 
-Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**
+Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**.
+
+#### SDL2 Image
+
+Go to [SDL Image Releases](https://github.com/libsdl-org/SDL_image/releases/tag/release-2.8.2) and download **SDL2_image-devel-2.8.2-mingw.zip**.
+
+Open the zip file and inside it go to **SDL2_image-2.8.2\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
 
 
 #### Environment variables

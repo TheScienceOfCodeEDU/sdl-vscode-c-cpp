@@ -1,4 +1,5 @@
 #define UNITY_BUILD 1
+#include <stdio.h>
 #ifdef __MINGW32__
  #include <SDL.h>
  #include <SDL_image.h>
