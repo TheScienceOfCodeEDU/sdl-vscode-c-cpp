@@ -21,7 +21,7 @@ main(int argc, char *args[])
         SDL_Texture* Texture = sdl_loadTexture("res/characters.png", Renderer);
         
         // Sprite source rectangle
-        SDL_Rect SrcRect = {10, 42, 14, 21};
+        SDL_Rect SrcRect = {9, 42, 15, 21};
         // Target rectangle (note that we will paint it at x4 its original size)
         SDL_Rect DestRect = {0, 0, SrcRect.w * 4, SrcRect.h * 4};
         while (1)
