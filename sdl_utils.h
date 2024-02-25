@@ -76,10 +76,10 @@ sdl_utils_loadTexture(const char *Path,  SDL_Renderer *Renderer)
     SDL_Texture *Result = SDL_CreateTextureFromSurface(Renderer, LoadedSurface);
     if (Result == 0)
     {
-        printf( "Unable to create texture from %s! SDL Error: %s\n", Path, SDL_GetError() );
+        printf( "Unable to create texture from %s! SDL Error: %s\n", Path, SDL_GetError());
         return 0;
     }
 
-    SDL_FreeSurface( LoadedSurface );
+    SDL_FreeSurface(LoadedSurface);
     return Result;
 }
