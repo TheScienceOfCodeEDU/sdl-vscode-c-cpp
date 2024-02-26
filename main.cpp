@@ -1,50 +1,44 @@
+#define UNITY_BUILD 1
+#include <stdio.h>
 #ifdef __MINGW32__
  #include <SDL.h>
+ #include <SDL_image.h>
 #else
  #include <SDL2/SDL.h>
+ #include <SDL2/SDL_image.h>
 #endif
-#include <stdio.h>
+#include "common.h"
+#include "sdl_utils.h"
 
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
-
-int main(int argc, char* args[])
+int
+main(int argc, char *args[])
 {
-    if (SDL_Init(SDL_INIT_VIDEO ) < 0)
+    SDL_Window *Window;
+    SDL_Renderer *Renderer;
+    // Init SDL without texture filtering for better pixelart results
+    if (sdl_utils_Init("SDL Tutorial", &Window, &Renderer, 0)) 
     {
-        printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
-    }
-    else
-    {
-        SDL_Window* window = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-        if (window == 0)
+        SDL_Texture* Texture = sdl_utils_loadTexture("res/characters.png", Renderer);
+        
+        // Sprite source rectangle
+        SDL_Rect SrcRect = {9, 42, 15, 21};
+        // Target rectangle (note that we will paint it at x4 its original size)
+        SDL_Rect DestRect = {0, 0, SrcRect.w * 4, SrcRect.h * 4};
+        while (1)
         {
-            printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
-        }
-        else
-        {
-            SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
-            SDL_Event windowEvent;
-            SDL_Rect rect = {0, 0, 50, 50};
-            while (1) 
+            SDL_RenderClear(Renderer);
+            SDL_RenderCopy(Renderer, Texture, &SrcRect, &DestRect);
+            SDL_RenderPresent(Renderer);
+
+            SDL_Event Event;
+            if (SDL_PollEvent(&Event))
             {
-                rect.x = (rect.x + 1) % SCREEN_WIDTH;
-                rect.y = (rect.y + 1) % SCREEN_HEIGHT;
-
-                SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 255, 255, 255));
-                SDL_FillRect(screenSurface, &rect, SDL_MapRGB(screenSurface->format, 0, 0, 255));
-                SDL_UpdateWindowSurface(window);
-
-                if (SDL_PollEvent(&windowEvent))
-                {
-                    if (windowEvent.type == SDL_QUIT)  break;
-                } 
-            }	
+                if (Event.type == SDL_QUIT) break;
+            } 
         }
-        SDL_DestroyWindow(window);
+
+        SDL_DestroyTexture(Texture);		
     }
-
-    SDL_Quit();
-
+    sdl_utils_Quit(Window, Renderer);
     return 0;
 }

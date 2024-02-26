@@ -1,9 +1,13 @@
 # SDL base project
 
-This project is part of a tutorial by The Science of Code.
+![sdl sample screenshot](.docs/screenshot.png)
 
-* [Complete instructions English](https://thescienceofcode.com/sdl-vscode-c-cpp-debug/)
-* [Complete instructions Spanish](https://thescienceofcode.com/es/sdl-vscode-c-cpp-debug/)
+This project is part of a tutorial by The Science of Code. For a complete walkthrough, please check the following links otherwise continue reading the *quickstart*:
+
+* [English guide](https://thescienceofcode.com/sdl-vscode-c-cpp-debug/)
+* [Guía en Español](https://thescienceofcode.com/es/sdl-vscode-c-cpp-debug/)
+
+Sprites used are licensed under CC0 (Public Domain) by [Buch](https://opengameart.org/content/a-platformer-in-the-forest).
 
 ## Quickstart
 
@@ -28,13 +32,13 @@ Open the project and press **ctrl + shift + b** to build. Then press **F5** to D
 * Fedora:
   ```
   sudo dnf install gcc-c++
-  sudo dnf install SDL2 SDL2-devel
+  sudo dnf install SDL2 SDL2-devel SDL2_image-devel SDL2_mixer-devel SDL2_ttf-devel
   ```
 
 * Ubuntu:
   ```
   sudo apt install build-essential
-  sudo apt install libsdl2-dev
+  sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
   ```
 
 ### Mac
@@ -44,6 +48,9 @@ Install pre-requisites by using these commands:
 ```
 xcode-select --install
 brew install SDL2
+brew install sdl2_image
+brew install sdl2_mixer
+brew install sdl2_ttf
 ```
 
 By default, we enabled LLDB as debugger otherwise you will need to [certify the **GDB** binary](https://stackoverflow.com/questions/66470788/how-to-set-gdb-as-debugger-for-the-c-c-extension-pf-vscode-on-macos).
@@ -60,12 +67,15 @@ Install [MSYS2](https://www.msys2.org/) under the default folder **c:\\msys64\\*
  pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
  ```
 
-#### SDL2
+#### Installing SDL2
 
-Go to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**.
+1. Go to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**. Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**.
 
-Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**
+2. Go to [SDL2 Image Releases](https://github.com/libsdl-org/SDL_image/releases/tag/release-2.8.2) and download **SDL2_image-devel-2.8.2-mingw.zip**. Open the zip file and inside it go to **SDL2_image-2.8.2\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
 
+3. Go to [SDL2 Mixer Releases](https://github.com/libsdl-org/SDL_mixer/releases/tag/release-2.8.0) and download **SDL2_mixer-devel-2.8.0-mingw.zip**. Open the zip file and inside it go to **SDL2_mixer-2.8.0\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
+
+4. Go to [SDL2 TTF Releases](https://github.com/libsdl-org/SDL_ttf/releases/tag/release-2.22.0) and download **SDL2_ttf-devel-2.22.0-mingw.zip**. Open the zip file and inside it go to **SDL2_ttf-2.22.0\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
 
 #### Environment variables
 
