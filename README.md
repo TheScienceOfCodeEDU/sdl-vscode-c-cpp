@@ -1,9 +1,11 @@
 # SDL base project
 
-This project is part of a tutorial by The Science of Code.
+![sdl sample screenshot](.docs/screenshot.png)
 
-* [Complete instructions English](https://thescienceofcode.com/sdl-vscode-c-cpp-debug/)
-* [Complete instructions Spanish](https://thescienceofcode.com/es/sdl-vscode-c-cpp-debug/)
+This project is part of a tutorial by The Science of Code. For a complete walkthrough, please check the following links otherwise continue reading the *quickstart*:
+
+* [English guide](https://thescienceofcode.com/sdl-vscode-c-cpp-debug/)
+* [Guía en Español](https://thescienceofcode.com/es/sdl-vscode-c-cpp-debug/)
 
 Sprites used are licensed under CC0 (Public Domain) by [Buch](https://opengameart.org/content/a-platformer-in-the-forest).
 
