@@ -61,25 +61,3 @@ sdl_utils_Quit(SDL_Window *Window, SDL_Renderer *Renderer)
     IMG_Quit();
     SDL_Quit();
 }
-
-
-function SDL_Texture *
-sdl_utils_loadTexture(const char *Path,  SDL_Renderer *Renderer)
-{
-    SDL_Surface *LoadedSurface = IMG_Load(Path);
-    if (LoadedSurface == 0)
-    {
-        printf("Unable to load image %s! SDL_image Error: %s\n", Path, IMG_GetError());
-        return 0;
-    }
-
-    SDL_Texture *Result = SDL_CreateTextureFromSurface(Renderer, LoadedSurface);
-    if (Result == 0)
-    {
-        printf( "Unable to create texture from %s! SDL Error: %s\n", Path, SDL_GetError());
-        return 0;
-    }
-
-    SDL_FreeSurface(LoadedSurface);
-    return Result;
-}
