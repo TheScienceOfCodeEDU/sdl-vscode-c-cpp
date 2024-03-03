@@ -1,5 +1,15 @@
+// SDL VSCODE C/C++
+//
+// This project is part of a tutorial by The Science of Code:
+// - English: https://thescienceofcode.com/sdl-vscode-c-cpp-debug/
+// - Español: https://thescienceofcode.com/es/sdl-vscode-c-cpp-debug/
+//
+// NOTES:
+// - This project uses unity build, includes inside secondary files are used only for IDE purpouses (code completition, syntax hl, etc).
+// - "IWYU pragma: keep" comments are used to ignore clangd warnings related with unity builds.
+
 #define UNITY_BUILD 1
-#include <stdio.h>
+#include <stdio.h>              // IWYU pragma: keep
 #ifdef _WIN64
  #include <SDL.h>
  #include <SDL_image.h>
