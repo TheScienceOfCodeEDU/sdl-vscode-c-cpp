@@ -100,9 +100,9 @@ gdb --version
 
 If something fails, double check your PATH values against real folder locations.
 
-#### Fix intellisense error for SDL.h include
+#### Fix highlighter error for SDL.h include
 
-On Windows VSCode intellisense won't find SDL includes by default, to fix this just **hit f1** and type **User Settings (JSON)** and press enter, add the following lines to the opened JSON file:
+On Windows VSCode syntax highlighter won't find SDL includes by default, to fix this just **hit f1**, type **User Settings (JSON)** and press **Enter**. Finally, add the following lines to the opened JSON file:
 
 ```json
 "C_Cpp.intelliSenseEngine": "disabled",
