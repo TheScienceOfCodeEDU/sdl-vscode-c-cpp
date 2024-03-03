@@ -23,7 +23,7 @@ Configure the environment for your OS (see instructions below), and then prepare
     * [C/C++ extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
     * [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
 
-Open the project and press **ctrl + shift + b** to build. Then press **F5** to Debug. You should see an empty window and you may add debug breakpoints as required.
+Open the project and press **ctrl + shift + b** to build. Then press **ctrl + shift + d** to Debug (selecting always the right OS). You should see an empty window and you may add debugging breakpoints as required.
 
 
 ## Configuring the environment
