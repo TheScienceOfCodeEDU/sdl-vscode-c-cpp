@@ -1,6 +1,7 @@
 #ifndef UNITY_BUILD
+ #include <stdio.h>
  #include "common.h"
- #ifdef __MINGW32__
+ #ifdef _WIN64
   #include <SDL.h>
   #include <SDL_image.h>
  #else
