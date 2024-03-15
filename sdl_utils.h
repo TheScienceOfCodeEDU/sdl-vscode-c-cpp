@@ -12,14 +12,14 @@
 
 
 function inline bool
-sdl_utils_Init(const char *Title, SDL_Window **Window, SDL_Renderer **Renderer, bool TextureFiltering)
+sdl_utils_Init(const char *title, SDL_Window **window, SDL_Renderer **renderer, bool textureFiltering)
 {
     if (SDL_Init(SDL_INIT_VIDEO ) < 0)
     {
         printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
         return 0;
     }
-    if (TextureFiltering)
+    if (textureFiltering)
     {
         if (!SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1"))
         {
@@ -27,21 +27,21 @@ sdl_utils_Init(const char *Title, SDL_Window **Window, SDL_Renderer **Renderer, 
         }
     }
 
-    *Window = SDL_CreateWindow(Title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+    *window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
         SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-    if (Window == 0)
+    if (window == 0)
     {
         printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
         return 0;
     }
 
-    *Renderer = SDL_CreateRenderer(*Window, -1, SDL_RENDERER_ACCELERATED);
-    if (Renderer == 0)
+    *renderer = SDL_CreateRenderer(*window, -1, SDL_RENDERER_ACCELERATED);
+    if (renderer == 0)
     {
         printf("Renderer could not be created! SDL_Error: %s\n", SDL_GetError());
         return 0;
     }
-    SDL_SetRenderDrawColor(*Renderer, BG_R, BG_G, BG_B, 0xFF);
+    SDL_SetRenderDrawColor(*renderer, BG_R, BG_G, BG_B, 0xFF);
     
     int imgFlags = IMG_INIT_PNG | IMG_INIT_JPG;
     if (!(IMG_Init(imgFlags) & imgFlags))
@@ -54,10 +54,10 @@ sdl_utils_Init(const char *Title, SDL_Window **Window, SDL_Renderer **Renderer, 
 }
 
 function void
-sdl_utils_Quit(SDL_Window *Window, SDL_Renderer *Renderer)
+sdl_utils_Quit(SDL_Window *window, SDL_Renderer *renderer)
 {
-    if (Renderer) SDL_DestroyRenderer(Renderer);
-    if (Window) SDL_DestroyWindow(Window);
+    if (renderer) SDL_DestroyRenderer(renderer);
+    if (window) SDL_DestroyWindow(window);
 
     IMG_Quit();
     SDL_Quit();

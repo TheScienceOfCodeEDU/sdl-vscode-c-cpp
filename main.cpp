@@ -23,32 +23,32 @@
 int
 main(int argc, char *args[])
 {
-    SDL_Window *Window;
-    SDL_Renderer *Renderer;
+    SDL_Window *window;
+    SDL_Renderer *renderer;
     // Init SDL without texture filtering for better pixelart results
-    if (sdl_utils_Init("SDL Tutorial", &Window, &Renderer, 0)) 
+    if (sdl_utils_Init("SDL Tutorial", &window, &renderer, 0)) 
     {
-        SDL_Texture* Texture = IMG_LoadTexture(Renderer, "res/characters.png");
+        SDL_Texture* texture = IMG_LoadTexture(renderer, "res/characters.png");
         
         // Sprite source rectangle
-        SDL_Rect SrcRect = {9, 42, 15, 21};
+        SDL_Rect srcRect = {9, 42, 15, 21};
         // Target rectangle (note that we will paint it at x4 its original size)
-        SDL_Rect DestRect = {0, 0, SrcRect.w * 4, SrcRect.h * 4};
+        SDL_Rect destRect = {0, 0, srcRect.w * 4, srcRect.h * 4};
         while (1)
         {
-            SDL_RenderClear(Renderer);
-            SDL_RenderCopy(Renderer, Texture, &SrcRect, &DestRect);
-            SDL_RenderPresent(Renderer);
+            SDL_RenderClear(renderer);
+            SDL_RenderCopy(renderer, texture, &srcRect, &destRect);
+            SDL_RenderPresent(renderer);
 
-            SDL_Event Event;
-            if (SDL_PollEvent(&Event))
+            SDL_Event event;
+            if (SDL_PollEvent(&event))
             {
-                if (Event.type == SDL_QUIT) break;
+                if (event.type == SDL_QUIT) break;
             } 
         }
 
-        SDL_DestroyTexture(Texture);		
+        SDL_DestroyTexture(texture);		
     }
-    sdl_utils_Quit(Window, Renderer);
+    sdl_utils_Quit(window, renderer);
     return 0;
 }
