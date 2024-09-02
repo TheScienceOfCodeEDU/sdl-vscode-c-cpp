@@ -9,6 +9,14 @@ This project is part of a tutorial by The Science of Code. For a complete walkth
 
 Sprites used are licensed under CC0 (Public Domain) by [Buch](https://opengameart.org/content/a-platformer-in-the-forest).
 
+## html
+
+![sdl html screenshot](.docs/html.png)
+
+Download, install and activate [emsdk](https://emscripten.org/docs/getting_started/downloads.html) on a Windows terminal.
+
+In the same terminal, run *build-win-ecc.bat*. Install *Live Server (Five Server)* extension for VSCode and activate the **Go Live** button (right bottom corner of VSCode) while index.html is opened.
+
 ## Quickstart
 
 Configure the environment for your OS (see instructions below), and then prepare your IDE:
