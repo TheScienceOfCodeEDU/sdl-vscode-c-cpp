@@ -71,7 +71,7 @@ Install [MSYS2](https://www.msys2.org/) under the default folder **c:\\msys64\\*
 #### Installing SDL2
 
 * **Alternative A** (easy):
-  Download this zip file and extract its contents into your computer’s root path C:\.
+  Download [this zip file](https://mega.nz/file/YFlzyJyb#waq7p7JoCKys6JbZ1gD8rtdeXX5KohbrtRObA4egvr0) and extract its contents into your computer’s root path C:\.
 
 * **Alternative B** (manual download):
   1. Go to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**. Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**.
