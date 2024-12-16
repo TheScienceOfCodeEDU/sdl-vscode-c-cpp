@@ -70,13 +70,19 @@ Install [MSYS2](https://www.msys2.org/) under the default folder **c:\\msys64\\*
 
 #### Installing SDL2
 
-1. Go to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**. Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**.
+* **Alternative A** (easy):
+  Download this zip file and extract its contents into your computer’s root path C:\.
 
-2. Go to [SDL2 Image Releases](https://github.com/libsdl-org/SDL_image/releases/tag/release-2.8.2) and download **SDL2_image-devel-2.8.2-mingw.zip**. Open the zip file and inside it go to **SDL2_image-2.8.2\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
+* **Alternative B** (manual download):
+  1. Go to [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5) and download **SDL2-devel-2.28.5-mingw.zip**. Open the zip file and inside it go to **SDL2-2.28.5\\x86_64-w64-mingw32\\**, extract the contents (four folders) into **c:\sdl2\\**.
 
-3. Go to [SDL2 Mixer Releases](https://github.com/libsdl-org/SDL_mixer/releases/tag/release-2.8.0) and download **SDL2_mixer-devel-2.8.0-mingw.zip**. Open the zip file and inside it go to **SDL2_mixer-2.8.0\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
+  2. Go to [SDL2 Image Releases](https://github.com/libsdl-org/SDL_image/releases/tag/release-2.8.2) and download **SDL2_image-devel-2.8.2-mingw.zip**. Open the zip file and inside it go to **SDL2_image-2.8.2\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
 
-4. Go to [SDL2 TTF Releases](https://github.com/libsdl-org/SDL_ttf/releases/tag/release-2.22.0) and download **SDL2_ttf-devel-2.22.0-mingw.zip**. Open the zip file and inside it go to **SDL2_ttf-2.22.0\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
+  3. Go to [SDL2 Mixer Releases](https://github.com/libsdl-org/SDL_mixer/releases/tag/release-2.8.0) and download **SDL2_mixer-devel-2.8.0-mingw.zip**. Open the zip file and inside it go to **SDL2_mixer-2.8.0\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
+
+  4. Go to [SDL2 TTF Releases](https://github.com/libsdl-org/SDL_ttf/releases/tag/release-2.22.0) and download **SDL2_ttf-devel-2.22.0-mingw.zip**. Open the zip file and inside it go to **SDL2_ttf-2.22.0\x86_64-w64-mingw32**, extract the contents (three folders) into **c:\sdl2\\**.
+ 
+  > **Note:** If you want to, you can download newer versions from the repositories. Though listed versions were tested by **The Science of Code**.
 
 #### Environment variables
 
@@ -99,6 +105,15 @@ gdb --version
 ```
 
 If something fails, double check your PATH values against real folder locations.
+
+#### Disable automatic header insertion
+
+It is recommended to disable automatic header insertion by hitting f1, then typing User Settings (JSON) and pressing Enter. Finally, add the following line to the opened JSON file:
+
+```json
+"clangd.arguments": [ "--header-insertion=never" ],
+```
+
 
 #### Fix highlighter error for SDL.h include
 
